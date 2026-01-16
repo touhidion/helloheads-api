@@ -4,8 +4,8 @@ WORKDIR /app
 COPY gradle gradle
 COPY gradlew build.gradle settings.gradle ./
 COPY src src
-RUN chmod +x ./gradlew
-RUN ./gradlew bootJar --no-daemon
+RUN sed -i 's/\r$//' gradlew && chmod +x gradlew
+RUN sh ./gradlew bootJar --no-daemon
 
 # Runtime stage
 FROM eclipse-temurin:21-jre-alpine
