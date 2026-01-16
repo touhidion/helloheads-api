@@ -9,11 +9,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/health")
+@RequestMapping("/api/sdf")
 public class HealthController {
 
     @GetMapping
-    public Map<String, Object> getHealthInfo() {
+    public Map<String, Object> sdf() {
         Map<String, Object> healthInfo = new HashMap<>();
         healthInfo.put("status", "UP");
         healthInfo.put("timestamp", LocalDateTime.now().toString());
@@ -33,4 +33,5 @@ public class HealthController {
         return healthInfo;
     }
 }
+
 
