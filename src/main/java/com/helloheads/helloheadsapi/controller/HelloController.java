@@ -41,13 +41,5 @@ public class HelloController {
         response.put("timestamp", System.currentTimeMillis());
         return response;
     }
-
-    @GetMapping("/health")
-    public Map<String, String> health() {
-        Map<String, String> response = new HashMap<>();
-        response.put("status", "UP");
-        response.put("service", "helloheads-api");
-        return response;
-    }
 }
 
